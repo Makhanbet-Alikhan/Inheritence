@@ -3,18 +3,14 @@ import java.util.Scanner;
 public class ClothingItem {
     protected int ClothId;
     protected double price;
-    protected String category;
-    protected String material;
     protected boolean isAvailable;
     protected int count_of_item;
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public ClothingItem(int clothId, double price, String category, String material, boolean isAvailable, int count_of_item) {
+    public ClothingItem(int clothId, double price, boolean isAvailable, int count_of_item) {
         setPrice(price);
         this.ClothId = clothId;
-        setCategory(category);
-        setMaterial(material);
         this.isAvailable = isAvailable;
         setCount_of_item(count_of_item);
     }
@@ -33,32 +29,6 @@ public class ClothingItem {
             setPrice(scanner.nextDouble());
         }
 
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        if (category != null && !category.isEmpty()){
-            this.category = category;}
-        else{
-            System.out.print("Category can't be empty! Enter again: ");
-            setCategory(scanner.next());
-        }
-    }
-
-    public String getMaterial() {
-        return material;
-    }
-
-    public void setMaterial(String material) {
-        if (material != null && !material.isEmpty()){
-            this.material = material;}
-        else{
-            System.out.print("Material can't be empty! Enter again: ");
-            setMaterial(scanner.next());
-        }
     }
 
     public boolean isAvailable() {
@@ -80,7 +50,6 @@ public class ClothingItem {
             System.out.print("Count of item less than 1! Enter again: ");
             setCount_of_item(scanner.nextInt());
         }
-
     }
 
     public int getClothId() {
@@ -91,12 +60,28 @@ public class ClothingItem {
         ClothId = clothId;
     }
 
+    public void available() {
+        if(isAvailable){
+            System.out.println(ClothId + " is available.");
+        }else{
+            System.out.println(ClothId + " is unavailable.");
+        }
+
+    }
+
+    public String getCategory() {
+        return "Cloth Item";
+    }
+
+    public void applyDiscount(double discount){
+        this.price = price - (price * (discount / 100));
+    }
+
+
     @Override
     public String toString() {
         return "ClothingItem{" +
                 "price=" + price +
-                ", category='" + category + '\'' +
-                ", material='" + material + '\'' +
                 ", isAvailable=" + isAvailable +
                 '}';
     }
