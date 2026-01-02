@@ -3,14 +3,16 @@ import java.util.Scanner;
 public class ClothingItem {
     protected int ClothId;
     protected double price;
+    protected String material;
     protected boolean isAvailable;
     protected int count_of_item;
 
     private static Scanner scanner = new Scanner(System.in);
 
-    public ClothingItem(int clothId, double price, boolean isAvailable, int count_of_item) {
+    public ClothingItem(int clothId, double price, String material, boolean isAvailable, int count_of_item) {
         setPrice(price);
         this.ClothId = clothId;
+        setMaterial(material);
         this.isAvailable = isAvailable;
         setCount_of_item(count_of_item);
     }
@@ -52,6 +54,19 @@ public class ClothingItem {
         }
     }
 
+    public String getMaterial() {
+        return material;
+    }
+
+    public void setMaterial(String material) {
+        if (material != null && !material.isEmpty()){
+            this.material = material;}
+        else{
+            System.out.print("Material can't be empty! Enter again: ");
+            setMaterial(scanner.next());
+        }
+    }
+
     public int getClothId() {
         return ClothId;
     }
@@ -83,6 +98,8 @@ public class ClothingItem {
         return "ClothingItem{" +
                 "price=" + price +
                 ", isAvailable=" + isAvailable +
+                ", remain:" + count_of_item +
+                ", materal:" + material +
                 '}';
     }
 }

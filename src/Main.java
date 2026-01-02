@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args){
-        ClothingItem cloth = new ClothingItem(0, 10, true, 3);
+        Shirt cloth = new Shirt(0, 10, "Silk", true, 3, "short");
+        cloth.Sleeves();
         System.out.println(cloth);
     }
 }

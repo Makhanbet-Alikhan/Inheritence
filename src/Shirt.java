@@ -1,25 +1,25 @@
 import java.util.Scanner;
 
 public class Shirt extends ClothingItem{
-    private String material;
 
+    private String sleevesHeight;
     private static Scanner scanner = new Scanner(System.in);
 
-    public Shirt(int clothId, double price, boolean isAvailable, int count_of_item, String category, String material){
-        super(clothId, price, isAvailable, count_of_item);
-        setMaterial(material);
+    public Shirt(int clothId, double price, String material, boolean isAvailable, int count_of_item, String sleevesHeight){
+        super(clothId, price, material, isAvailable, count_of_item);
+        setSleevesHeight(sleevesHeight);
     }
 
-    public String getMaterial() {
-        return material;
+    public String getSleevesHeight() {
+        return sleevesHeight;
     }
 
-    public void setMaterial(String material) {
-        if (material != null && !material.isEmpty()){
-            this.material = material;}
+    public void setSleevesHeight(String sleevesHeight) {
+        if (sleevesHeight != null && !sleevesHeight.isEmpty()){
+            this.sleevesHeight = sleevesHeight;}
         else{
-            System.out.print("Material can't be empty! Enter again: ");
-            setMaterial(scanner.next());
+            System.out.print("Sleeves are can't be empty! Enter again: ");
+            setSleevesHeight(scanner.next());
         }
     }
 
@@ -37,16 +37,16 @@ public class Shirt extends ClothingItem{
         return "Shirt";
     }
 
-    public void ShirtMethod() {
-        System.out.println("Shirt is cool, and its types could be various");
+    public void Sleeves() {
+        System.out.println("Sleeves are " + sleevesHeight);
+    }
+
+    public void ShirtMethod(){
+        System.out.println("Shirt is cool, it has been created for a chest");
     }
 
     @Override
-    public String toString() {
-        return super.toString() + " | material: " + material;
+    public String toString(){
+        return super.toString() + " sleeves=" + sleevesHeight;
     }
-
-
-
-
 }
