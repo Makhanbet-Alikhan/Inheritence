@@ -84,8 +84,8 @@ public class ClothingItem {
 
     }
 
-    public String getCategory() {
-        return "Cloth Item";
+    public void getCategory() {
+        System.out.println("Cloth Item");
     }
 
     public void applyDiscount(double discount){
@@ -96,7 +96,8 @@ public class ClothingItem {
     @Override
     public String toString() {
         return "ClothingItem{" +
-                "price=" + price +
+                "ID=" + ClothId +
+                ", price=" + price +
                 ", isAvailable=" + isAvailable +
                 ", remain:" + count_of_item +
                 ", materal:" + material +

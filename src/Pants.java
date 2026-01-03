@@ -27,8 +27,8 @@ public class Pants extends ClothingItem{
     }
 
     @Override
-    public String getCategory() {
-        return "Pants";
+    public void getCategory() {
+        System.out.println("Pants Item");
     }
 
     public void Pockets() {

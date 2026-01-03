@@ -33,8 +33,8 @@ public class Shirt extends ClothingItem{
     }
 
     @Override
-    public String getCategory() {
-        return "Shirt";
+    public void getCategory() {
+        System.out.println("Shirt Item");
     }
 
     public void Sleeves() {
