@@ -46,12 +46,6 @@ public class Main {
         }
     }
 
-    private static void ViewAvailability(){
-        for(ClothingItem s : allItems){
-            s.available();
-        }
-    }
-
     private static void addShirt() {
         System.out.println("\n--- ADD Shirt ---");
         System.out.print("Enter price: ");
@@ -189,7 +183,7 @@ public class Main {
                     viewAllItems();
                     break;
                 case 5:
-                    ViewAvailability();
+                    demonstratePolymorphism();
                     break;
                 case 6:
                     viewShirts();
