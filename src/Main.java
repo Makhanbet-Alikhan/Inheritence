@@ -13,8 +13,8 @@ public class Main {
         System.out.println("1. Add Item (General)");
         System.out.println("2. Add Shirt");
         System.out.println("3. Add Pants");
-        System.out.println("4. View All Items (Polymorphic)\n");
-        System.out.println("5. View all Items availability\n");
+        System.out.println("4. View All Items (Polymorphic)");
+        System.out.println("5. View all Items availability");
         System.out.println("6. View Shirts Only");
         System.out.println("7. View Pants Only");
         System.out.println("0. Exit");
@@ -169,9 +169,48 @@ public class Main {
 
     private static ArrayList<ClothingItem> allItems = new ArrayList<>();
     public static void main(String[] args){
-        allItems.add( new ClothingItem(allItems.size(), 100, "Silk", false, 4));
-        allItems.add( new Shirt(allItems.size(), 500, "Wool", true, 3, "long"));
-        allItems.add( new Pants(allItems.size(), 300, "Silk", true, 2, true));
+        boolean running = true;
+
+        while(running){
+            displayMenu();
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+            switch (choice){
+                case 1:
+                    addItem();
+                    break;
+                case 2:
+                    addShirt();
+                    break;
+                case 3:
+                    addPants();
+                    break;
+                case 4:
+                    viewAllItems();
+                    break;
+                case 5:
+                    ViewAvailability();
+                    break;
+                case 6:
+                    viewShirts();
+                    break;
+                case 7:
+                    viewPants();
+                    break;
+                case 0:
+                    running = false;
+                    break;
+                default: System.out.println("Wrong entered option, try again");
+            }
+            if (running){
+                System.out.println("\nPress Enter to continue...");
+                scanner.nextLine();
+            }
+        }
+        scanner.close();
+
+
 
     }
-}
+
+    }
