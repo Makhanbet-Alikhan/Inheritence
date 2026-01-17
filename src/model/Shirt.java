@@ -17,11 +17,14 @@ public class Shirt extends ClothingItem{
     }
 
     public void setSleevesHeight(String sleevesHeight) {
+        try{
         if (sleevesHeight != null && !sleevesHeight.isEmpty()){
             this.sleevesHeight = sleevesHeight;}
         else{
             System.out.print("Sleeves are can't be empty! Enter again: ");
             setSleevesHeight(scanner.next());
+        }}catch (IllegalAccessError e){
+            System.out.println("X" + e.getMessage());
         }
     }
 

@@ -6,7 +6,7 @@ public class Pants extends ClothingItem{
 
     public Pants(int clothId, double price, String material, boolean isAvailable, int count_of_item, boolean withPocket){
         super(clothId, price, material, isAvailable, count_of_item);
-        this.withPocket = withPocket;
+        setWithPocket(withPocket);
     }
 
     public boolean getWithPocket(){
@@ -14,7 +14,10 @@ public class Pants extends ClothingItem{
     }
 
     public void setWithPocket(boolean withPocket){
-        this.withPocket = withPocket;
+        try {
+        this.withPocket = withPocket;}catch (IllegalAccessError e){
+            System.out.println("X" + e.getMessage());
+        }
     }
 
     @Override

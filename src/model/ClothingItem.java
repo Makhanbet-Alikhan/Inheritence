@@ -15,7 +15,7 @@ public abstract class ClothingItem {
         setPrice(price);
         this.ClothId = clothId;
         setMaterial(material);
-        this.isAvailable = isAvailable;
+        setAvailable(isAvailable);
         setCount_of_item(count_of_item);
     }
 
@@ -75,11 +75,14 @@ public abstract class ClothingItem {
     }
 
     public void setMaterial(String material) {
+        try{
         if (material != null && !material.isEmpty()){
             this.material = material;}
         else{
             System.out.print("Material can't be empty! Enter again: ");
             setMaterial(scanner.next());
+        }}catch (IllegalAccessError e){
+            System.out.println("X" + e.getMessage());
         }
     }
 
