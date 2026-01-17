@@ -36,7 +36,7 @@ public class Shirt extends ClothingItem{
 
     @Override
     public void getCategory() {
-        System.out.println("model.Shirt Item");
+        System.out.println("Shirt Item");
     }
 
     public void Sleeves() {
@@ -44,7 +44,7 @@ public class Shirt extends ClothingItem{
     }
 
     public void ShirtMethod(){
-        System.out.println("model.Shirt is cool, it has been created for a chest");
+        System.out.println("Shirt is cool, it has been created for a chest");
     }
 
     @Override

@@ -20,15 +20,15 @@ public class Pants extends ClothingItem{
     @Override
     public void available() {
         if(isAvailable){
-            System.out.println("model.Pants" + " is available.");
+            System.out.println("Pants" + " is available.");
         }else{
-            System.out.println("model.Pants" + " is unavailable.");
+            System.out.println("Pants" + " is unavailable.");
         }
     }
 
     @Override
     public void getCategory() {
-        System.out.println("model.Pants Item");
+        System.out.println("Pants Item");
     }
 
     public void Pockets() {
@@ -40,7 +40,7 @@ public class Pants extends ClothingItem{
     }
 
     public void PantsMethod(){
-        System.out.println("model.Pants are cool, it has been created for legs");
+        System.out.println("Pants are cool, it has been created for legs");
     }
 
     @Override
