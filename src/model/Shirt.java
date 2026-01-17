@@ -1,3 +1,5 @@
+package model;
+
 import java.util.Scanner;
 
 public class Shirt extends ClothingItem{
@@ -26,15 +28,15 @@ public class Shirt extends ClothingItem{
     @Override
     public void available() {
         if(isAvailable){
-            System.out.println("Shirt" + " is available.");
+            System.out.println("model.Shirt" + " is available.");
         }else{
-            System.out.println("Shirt" + " is unavailable.");
+            System.out.println("model.Shirt" + " is unavailable.");
         }
     }
 
     @Override
     public void getCategory() {
-        System.out.println("Shirt Item");
+        System.out.println("model.Shirt Item");
     }
 
     public void Sleeves() {
@@ -42,7 +44,7 @@ public class Shirt extends ClothingItem{
     }
 
     public void ShirtMethod(){
-        System.out.println("Shirt is cool, it has been created for a chest");
+        System.out.println("model.Shirt is cool, it has been created for a chest");
     }
 
     @Override

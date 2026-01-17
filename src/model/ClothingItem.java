@@ -1,13 +1,15 @@
+package model;
+
 import java.util.Scanner;
 
-public class ClothingItem {
+public abstract class ClothingItem {
     protected int ClothId;
     protected double price;
     protected String material;
     protected boolean isAvailable;
     protected int count_of_item;
 
-    private static Scanner scanner = new Scanner(System.in);
+    private static Scanner scanner = new Scanner(System.in) ;
 
     public ClothingItem(int clothId, double price, String material, boolean isAvailable, int count_of_item) {
         setPrice(price);
@@ -75,23 +77,13 @@ public class ClothingItem {
         ClothId = clothId;
     }
 
-    public void available() {
-        if(isAvailable){
-            System.out.println(ClothId + " is available.");
-        }else{
-            System.out.println(ClothId + " is unavailable.");
-        }
+    public abstract void available();
 
-    }
-
-    public void getCategory() {
-        System.out.println("Cloth Item");
-    }
+    public abstract void getCategory();
 
     public void applyDiscount(double discount){
         this.price = price - (price * (discount / 100));
     }
-
 
     @Override
     public String toString() {
