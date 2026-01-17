@@ -26,11 +26,15 @@ public abstract class ClothingItem {
     }
 
     public void setPrice(double price) {
+        try {
         if (price > 0){
             this.price = price;
         }else{
             System.out.print("Price value is not correct! Enter again: ");
             setPrice(scanner.nextDouble());
+        }}
+        catch (IllegalAccessError e){
+            System.out.println("X" + e.getMessage());
         }
 
     }
@@ -40,7 +44,12 @@ public abstract class ClothingItem {
     }
 
     public void setAvailable(boolean available) {
-        isAvailable = available;
+        try {
+            isAvailable = available;
+        }catch (IllegalAccessError e){
+        System.out.println("X" + e.getMessage());
+    }
+
     }
 
     public int getCount_of_item() {
@@ -48,12 +57,17 @@ public abstract class ClothingItem {
     }
 
     public void setCount_of_item(int count_of_item) {
-        if (count_of_item > 0){
-            this.count_of_item = count_of_item;
-        }else{
-            System.out.print("Count of item less than 1! Enter again: ");
-            setCount_of_item(scanner.nextInt());
+        try{
+            if (count_of_item > 0){
+                this.count_of_item = count_of_item;
+            }else{
+                System.out.print("Count of item less than 1! Enter again: ");
+                setCount_of_item(scanner.nextInt());
+            }
+        }catch (IllegalAccessError e){
+            System.out.println("X" + e.getMessage());
         }
+
     }
 
     public String getMaterial() {
