@@ -34,7 +34,7 @@ public class ClothStoreMenu implements Menu{
                 scanner.nextLine();
                 switch (choice) {
                     case 1: addShirt(); break;
-                    case 2: addShirt(); break;
+                    case 2: addPants(); break;
                     case 3: viewAllItems(); break;
                     case 4: demonstratePolymorphism(); break;
                     case 0: running = false; break;

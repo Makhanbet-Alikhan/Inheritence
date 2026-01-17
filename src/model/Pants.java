@@ -33,9 +33,9 @@ public class Pants extends ClothingItem{
 
     public void Pockets() {
         if(withPocket){
-            System.out.println("model.Pants have pockets");
+            System.out.println("Pants have pockets");
         }else{
-            System.out.println("model.Pants do not have pockets");
+            System.out.println("Pants do not have pockets");
         }
     }
 

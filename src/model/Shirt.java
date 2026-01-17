@@ -28,9 +28,9 @@ public class Shirt extends ClothingItem{
     @Override
     public void available() {
         if(isAvailable){
-            System.out.println("model.Shirt" + " is available.");
+            System.out.println("Shirt" + " is available.");
         }else{
-            System.out.println("model.Shirt" + " is unavailable.");
+            System.out.println("Shirt" + " is unavailable.");
         }
     }
 
