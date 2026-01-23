@@ -9,6 +9,8 @@ public class Pants extends ClothingItem{
         setWithPocket(withPocket);
     }
 
+    public Pants(){}
+
     public boolean getWithPocket(){
         return withPocket;
     }

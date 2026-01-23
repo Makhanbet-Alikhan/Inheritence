@@ -2,13 +2,13 @@ package Menu;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import exception.InvalidInputException;
 import model.*;
 
 public class ClothStoreMenu implements Menu{
-
     private static Scanner scanner = new Scanner(System.in);
     private static ArrayList<ClothingItem> allItems = new ArrayList<>();
-
     @Override
     public void displayMenu() {
         System.out.println("\n========================================");
@@ -87,11 +87,10 @@ public class ClothStoreMenu implements Menu{
         scanner.nextLine();
         System.out.print("Enter Sleeves' height: ");
         String height = scanner.next();
-        // Create Chef but store as Staff (polymorphism!)
         Shirt shirt = new Shirt(allItems.size(), price, material, available, amount, height);
         allItems.add(shirt);
         System.out.println("\n Shirt added successfully!");}
-        catch (IllegalArgumentException e){
+        catch (InvalidInputException e){
             System.out.println("X" + e.getMessage());
         }
     }
@@ -133,8 +132,4 @@ public class ClothStoreMenu implements Menu{
         System.out.println(" Notice: Same method name (available), different output!");
         System.out.println(" This is POLYMORPHISM in action!");
     }
-
-
-
-
 }
